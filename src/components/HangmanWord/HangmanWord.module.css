@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  gap: 0.25em;
+  font-size: 6rem;
+  font-weight: bold;
+  font-family: 'monospace', sans-serif;
+  text-transform: uppercase;
+}
+
+.wordWrapper {
+  border-bottom: 0.1em solid #000;
+  border-radius: 10px;
+}
+
+.word {
+  color: #000;
+  user-select: none;
+}
+
+.word.error {
+  color: #8b0808;
+}
+
+.word.show {
+  visibility: visible;
+}
+
+.word.hidden {
+  visibility: hidden;
+}

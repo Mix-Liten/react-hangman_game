@@ -2,7 +2,7 @@ import { useState } from 'react'
 import words from './assets/wordList.json'
 import styles from './App.module.css'
 import HangmanDrawing from './components/HangmanDrawing'
-import HangmanWord from './components/HangmanWord'
+import { HangmanWord } from './components/HangmanWord'
 import { Keyboard } from './components/Keyboard'
 
 const getWord = () => words[Math.floor(Math.random() * words.length)]
@@ -24,7 +24,7 @@ function App() {
       <div className={styles.alert}>Winner! - Refresh to try again</div>
       {wordToGuess}
       {/* <HangmanDrawing /> */}
-      {/* <HangmanWord /> */}
+      <HangmanWord wordToGuess={wordToGuess} guessedLetters={guessedLetters} />
       <div className={styles.keyboardWrapper}>
         <Keyboard
           addGuessedLetter={addGuessedLetter}
