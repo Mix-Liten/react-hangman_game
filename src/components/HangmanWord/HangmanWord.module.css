@@ -8,6 +8,8 @@
 }
 
 .wordWrapper {
+  min-width: 0.7em;
+  text-align: center;
   border-bottom: 0.1em solid #000;
   border-radius: 10px;
 }
