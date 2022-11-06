@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import words from './assets/wordList.json'
 import styles from './App.module.css'
-import HangmanDrawing from './components/HangmanDrawing'
+import { HangmanDrawing } from './components/HangmanDrawing'
 import { HangmanWord } from './components/HangmanWord'
 import { Keyboard } from './components/Keyboard'
 
@@ -23,7 +23,7 @@ function App() {
     <div className={styles.wrapper}>
       <div className={styles.alert}>Winner! - Refresh to try again</div>
       {wordToGuess}
-      {/* <HangmanDrawing /> */}
+      <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
       <HangmanWord wordToGuess={wordToGuess} guessedLetters={guessedLetters} />
       <div className={styles.keyboardWrapper}>
         <Keyboard
