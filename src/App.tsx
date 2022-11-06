@@ -35,11 +35,29 @@ function App() {
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       const { key } = e
+      if (!key.match(/^[a-z]$/)) return
+
+      e.preventDefault()
+      addGuessedLetter(key)
+    }
+
+    document.addEventListener('keypress', handler)
+
+    return () => {
+      document.removeEventListener('keypress', handler)
+    }
+  }, [guessedLetters])
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      const { key } = e
       if (key !== 'Enter') return
 
       e.preventDefault()
       setGuessedLetters([])
-      setWordToGuess(getWord())
+      const newWord = getWord()
+      window.answer = newWord
+      setWordToGuess(newWord)
     }
     window.answer = wordToGuess
 
